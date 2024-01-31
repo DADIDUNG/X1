@@ -99,7 +99,7 @@ apt install -y golang wget git make
 git clone --branch x1 https://github.com/FairCrypto/go-x1
 x1 db heal --experimental
 git stash
-git pull && git checkout jacklevin74-patch-1
+git pull && git checkout x1
 git stash pop
 go mod tidy
 ```
