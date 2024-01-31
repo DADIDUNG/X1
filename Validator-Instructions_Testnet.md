@@ -97,6 +97,7 @@ apt install -y golang wget git make
 ```bash
 # Clone and build the X1 binary
 git clone --branch x1 https://github.com/FairCrypto/go-x1
+x1 db heal --experimental
 git stash
 git pull && git checkout jacklevin74-patch-1
 git stash pop
