@@ -191,7 +191,7 @@ https://pwa-explorer.x1-testnet.xen.network/staking
 Ensure your node is stopped, and add the --validator.id and --validator.pubkey flags to your node's command line:
 
 ```bash
-x1 --testnet --validator.id VALIDATOR_ID --validator.pubkey VALIDATOR_PUBKEY --xenblocks-endpoint ws://xenblocks.io:6668 --gcmode full --syncmode snap
+x1 --testnet --validator.id VALIDATOR_ID --validator.pubkey VALIDATOR_PUBKEY --xenblocks-endpoint ws://xenblocks.io:6668 --gcmode full --syncmode full
 ```
 Note: You can also attach --validator.password ~/.x1/.password
 
@@ -276,7 +276,7 @@ Add the following content. Replace YOUR_PUBLIC_KEY_VALIDATOR_PASSWORD without yo
 ```bash
 #!/usr/bin/expect
 set timeout -1
-spawn /root/go-x1/build/x1 --testnet --validator.id YOURID --validator.pubkey 0xc004....
+spawn /root/go-x1/build/x1 --testnet --validator.id YOURID --validator.pubkey 0xc004.... 
 expect "Passphrase:"
 send -- "YOUR_PUBLIC_KEY_VALIDATOR_PASSWORD\r"
 expect eof
