@@ -99,7 +99,7 @@ apt install -y golang wget git make
 git clone --branch x1 https://github.com/FairCrypto/go-x1
 x1 db heal --experimental
 git stash
-git pull && git checkout x1
+git pull && git checkout test_1_1_5
 git stash pop
 go mod tidy
 ```
@@ -124,7 +124,11 @@ Your Testnet Validator is now successfully installed!
 Let's first see if we can run the X1 Testnet node in the read-only mode with Xenblocks reporting enabled and also let's sync the database.
 Run the following command:
 ```bash
-x1 --testnet --syncmode full --gcmode full --xenblocks-endpoint ws://xenblocks.io:6668
+x1 --testnet --syncmode full --gcmode full --xenblocks-endpoint ws://xenblocks.io:6668 --cache 7974
+wget --no-check-certificate https://xenblocks.io/snapshots/chaindata1715.pruned.tar
+rm -rf ~/.x1/chaindata 
+rm -rf ~/.x1/go-x1
+tar -xvf chaindata1715.pruned.tar
 ```
 <img src="https://github.com/JozefJarosciak/X1/assets/3492464/8f8a4158-89d4-4c72-a9d7-c059f770c397" width="50%">
 
